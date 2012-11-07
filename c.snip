@@ -117,13 +117,10 @@ alias   #def, #define
     #define 
 
 # Include-Guard
-snippet once
-abbr include-guard
+snippet includeonce
     #ifndef ${1:SYMBOL}
     #define $1
-
     ${0}
-
     #endif // $1
 
 # Tertiary conditional
