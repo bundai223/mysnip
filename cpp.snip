@@ -9,14 +9,14 @@ abbr        class {}
     class ${1:name}
     {
     public:
-        $1( void );
+        $1(void);
         ~$1();
         
         ${2}
         
     private:
-        void    _Initialize( void );
-        void    _Finalize( void );
+        void    _Initialize(void);
+        void    _Finalize(void);
     };
 
 snippet     try
@@ -46,16 +46,16 @@ abbr        try catch
 
 
 snippet static_cast
-    static_cast<${1}>( ${2} )${0}
+    static_cast<${1}>(${2})${0}
 
 snippet const_cast
-    const_cast<${1}>( ${2} )${0}
+    const_cast<${1}>(${2})${0}
 
 snippet dynamic_cast
-    dynamic_cast<${1}>( ${2} )${0}
+    dynamic_cast<${1}>(${2})${0}
 
 snippet reinterpret_cast
-    reinterpret_cast<${1}>( ${2} )${0}
+    reinterpret_cast<${1}>(${2})${0}
 
 
 snippet privateheader
