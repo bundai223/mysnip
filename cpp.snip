@@ -9,14 +9,14 @@ abbr        class {}
     class ${1:name}
     {
     public:
-        $1(void);
+        $1();
         ~$1();
         
         ${2}
         
     private:
-        void    _Initialize(void);
-        void    _Finalize(void);
+        void    _Initialize();
+        void    _Finalize();
     };
 
 snippet     try
