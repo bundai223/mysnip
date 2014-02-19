@@ -1,0 +1,13 @@
+snippet     module
+abbr        module
+options     head
+    module ${1:/* module name */}
+        ${0:/* code */}
+    end
+
+snippet     module_function
+abbr        module function
+options     head
+    module_function :${0:/* function name */}
+
+
