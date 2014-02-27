@@ -13,3 +13,10 @@ options     head
     ■その他
     　${5}
 
+snippet     project_local_setting
+abbr        project local setting
+options     head
+    " .local.vimrc
+    let $PROJECT_ROOT=expand("`getcwd()`")
+    lcd $PROJECT_ROOT
+
