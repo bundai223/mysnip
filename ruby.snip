@@ -1,13 +1,19 @@
 snippet     module
 abbr        module
 options     head
-    module ${1:/* module name */}
-        ${0:/* code */}
+    module ${1:module name}
+        ${0:code}
     end
 
 snippet     module_function
 abbr        module function
 options     head
-    module_function :${0:/* function name */}
+    module_function :${0:function name}
 
+snippet     class
+abbr        class
+options     head
+    class ${1:class name}
+        ${0:code}
+    end
 
