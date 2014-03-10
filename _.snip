@@ -1,0 +1,22 @@
+snippet     nippo
+abbr        nippo
+options     head
+    `strftime("%Y/%m/%d")` 日報
+    ■作業内容
+    　・${1:Project}
+    　　${2}
+
+    ■明日の作業
+    　・${3}
+    　　${4}
+
+    ■その他
+    　${5}
+
+snippet     project_local_setting
+abbr        project local setting
+options     head
+    " .local.vimrc
+    let $PROJECT_ROOT=expand("`getcwd()`")
+    lcd $PROJECT_ROOT
+
