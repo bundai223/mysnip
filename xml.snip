@@ -1,0 +1,16 @@
+snippet     cdata
+    <![CDATA[${1}]]>${0}
+
+snippet     testcase_step
+abbr        testcase_step on TestLink
+options     head
+	<step>
+		<step_number><![CDATA[0]]></step_number>
+		<actions><![CDATA[<p>
+			${1}
+			</p>]]></actions>
+		<expectedresults><![CDATA[<p>
+			${2}
+			</p>]]></expectedresults>
+	</step>
+
