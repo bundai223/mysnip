@@ -1,0 +1,12 @@
+snippet     while_in_array
+abbr        while_in_array
+options     head
+    ${1:array cmd (ex. ls)} | while read ${2:element name}; do
+        ${0}
+    done
+
+snippet     script_dir
+abbr        script_dir
+options     head
+    script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE:-$0}")"; pwd)"
+

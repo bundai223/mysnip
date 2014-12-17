@@ -1,0 +1,46 @@
+include sh.snip
+
+snippet     completion_file
+abbr        completion_file
+options     head
+    #compdef ${1:/* tool name*/}
+    # ------------------------------------------------------------------------------
+    # Description
+    # -----------
+    #
+    #  Completion script for $1
+    #
+    # ------------------------------------------------------------------------------
+    # Authors
+    # -------
+    #
+    #  * Daiji Nishimura
+    #
+    # ------------------------------------------------------------------------------
+    
+    
+    _$1 ()
+    {
+        local curcontext="$curcontext" state line ret=1
+    
+        _arguments -C \
+        '(${2:/* option */})'{$2}'[${3:/* explanation */}]' \
+        && ret=0
+    
+      return ret
+    }
+    
+    _$1 "$@"
+    
+    # Local Variables:
+    # mode: Shell-Script
+    # sh-indentation: 2
+    # indent-tabs-mode: nil
+    # sh-basic-offset: 2
+    # End:
+    # vim: ft=zsh sw=2 ts=2 et
+
+snippet     completion_option
+abbr        completion_option
+options     head
+    '(${1:/* option */})'{$1}'[${2:/* explanation */}]' \
