@@ -34,3 +34,17 @@ snippet     vim_filelocal_settings
 abbr        vim file locla setting.
 options     head
     vi: ${1:ex) set ft=ruby} :
+
+snippet     upstart_daemon
+abbr        upstart_daemon
+options     head
+    description "${1:description ex)daemon.conf}"
+    author  "${2:author} <${3:mail_address}>"
+
+    start on runlevel [${4:run_level ex)2345}]
+    stop on runlevel [${5:run_level ex)016}]
+
+    chdir ${6:working directory}
+    exec ${7:run command}
+    respawn
+
