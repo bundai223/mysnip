@@ -1,0 +1,11 @@
+snippet     neobundle_load_on_source
+abbr        neobundle_load_on_source
+options     head
+    " ${1:plugin name} {{{
+    let s:bundle = neobundle#get('$1')
+    function! s:bundle.hooks.on_source(bundle)
+      ${0}
+    endfunction
+    " }}}
+
+
