@@ -10,3 +10,18 @@ abbr        script_dir
 options     head
     script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE:-$0}")"; pwd)"
 
+snippet     insert
+abbr        insert
+options     head
+    ${1:array name}=(${{$1}}[@] ${2:insert item})
+
+snippet     argnum
+abbr        argnum
+options     head
+    $#
+
+snippet     return_code
+abbr        return_code
+options     head
+    $?
+
