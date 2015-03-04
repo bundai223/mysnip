@@ -2,13 +2,18 @@ snippet     while_in_array
 abbr        while_in_array
 options     head
     ${1:array cmd (ex. ls)} | while read ${2:element name}; do
-        ${0}
+      ${0}
     done
 
-snippet     script_dir
-abbr        script_dir
+snippet     scriptdir
+abbr        Set script file dir path.
 options     head
-    script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE:-$0}")"; pwd)"
+    ${1:SCRIPTDIR}="$(cd -- "$(dirname -- "${BASH_SOURCE:-\$0}")"; pwd)"
+
+snippet     scriptpath_readlink
+abbr        Set script file path can use readlink.
+options     head
+    ${1:SCRIPTPATH}=$(readlink -nf ${BASH_SOURCE:-\$0})
 
 snippet     insert
 abbr        insert
@@ -25,3 +30,19 @@ abbr        return_code
 options     head
     $?
 
+snippet     usage_template
+abbr        usage template
+alias       ut
+options     head
+    function usage() {
+      echo ""
+      echo "Usage: \$0 [-a] [-b] [-f filename] arg1 ..."
+      echo "       This script is ..."
+      echo ""
+      echo "Options:"
+      echo "      -a    ~~~~~"
+      echo "      -b    ~~~~~"
+      echo "      -f    ~~~~~"
+      echo ""
+      exit 1
+    }

@@ -1,50 +1,41 @@
-snippet     nippo
-abbr        nippo
+snippet     vi_modeline
+abbr        vi file local settings.
 options     head
-    `strftime("%Y/%m/%d")` 日報
-    ■作業内容
-    　・${1:Project}
-    　　${2}
+    vi: set ${1}:
 
-    ■明日の作業
-    　・${3}
-    　　${4}
-
-    ■その他
-    　${5}
+snippet     vim_modeline
+abbr        vim file local settings.
+options     head
+    vim: set ${1}:
 
 snippet     project_local_setting
-abbr        project local setting
+abbr        project local settings file snippet.
 options     head
     " .local.vimrc
     let $PROJECT_ROOT=expand("`getcwd()`")
     lcd $PROJECT_ROOT
 
 snippet     shebang
-abbr        shebang
+abbr        shebang.
 options     head
     #!/${1:command}
 
-snippet     shebang_depr
-abbr        shebang_depr
+snippet     shebang_env
+abbr        shebang with env command.
 options     head
-    #!/usr/bin/env ${0}
-
-snippet     vim_filelocal_settings
-abbr        vim file locla setting.
-options     head
-    vi: ${1:ex) set ft=ruby} :
+    #!/usr/bin/env ${1}
 
 snippet     upstart_daemon
-abbr        upstart_daemon
+abbr        upstart daemon template.
 options     head
     description "${1:description ex)daemon.conf}"
     author  "${2:author} <${3:mail_address}>"
 
-    start on runlevel [${4:run_level ex)2345}]
-    stop on runlevel [${5:run_level ex)016}]
+    start on runlevel [${4:2345}]
+    stop on runlevel [${5:016}]
 
     chdir ${6:working directory}
-    exec ${7:run command}
+    exec ${7:run command ex) python application.py >> var/log/appication.log 2>&1}
     respawn
+    # vi: set ft=upstart:
 

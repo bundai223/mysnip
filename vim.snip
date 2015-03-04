@@ -8,4 +8,14 @@ options     head
     endfunction
     " }}}
 
+snippet     neobundle_tap
+abbr        neobundle tap
+options     head
+    if neobundle#tap('${1:plugin name}') "{{{
+    endif
+    "}}}
 
+snippet     neobundle_config
+abbr        neobundle config
+options     head
+    call neobundle#config(${1:plugin name})
