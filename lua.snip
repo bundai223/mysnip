@@ -1,0 +1,25 @@
+snippet     class
+abbr        class template
+    ${1:classname} = {}
+    $1.new = function (${2})
+        local this = {}
+
+        this.__construct = function(${3})
+        end
+
+        ${0}
+        return this:__construct($2)
+    end
+
+snippet     member_param
+alias       mparam
+abbr        member parameter
+    this.${1:param_name} = ${2:nil}
+    ${0}
+
+snippet     member_func
+alias       mfunc
+abbr        member function
+    this.${1:funcname} = function(${2})
+        ${0}
+    end

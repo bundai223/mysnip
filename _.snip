@@ -34,8 +34,10 @@ options     head
     start on runlevel [${4:2345}]
     stop on runlevel [${5:016}]
 
-    chdir ${6:working directory}
-    exec ${7:run command ex) python application.py >> var/log/appication.log 2>&1}
+    script
+      chdir ${6:working directory}
+      exec ${7:run command ex) python application.py >> var/log/appication.log 2>&1}
+    end script
     respawn
     # vi: set ft=upstart:
 
