@@ -12,6 +12,7 @@ snippet     neobundle_tap
 abbr        neobundle tap
 options     head
     if neobundle#tap('${1:plugin name}') "{{{
+      call neobundle#untap()
     endif
     "}}}
 
@@ -19,3 +20,27 @@ snippet     neobundle_config
 abbr        neobundle config
 options     head
     call neobundle#config(${1:plugin name})
+
+snippet     vimplugin-header
+abbr        vimplugin header part.
+options     head
+    " ${1:descriptions}
+    " Last Change:	${2:date}
+    " Maintainer:	${3:author} <${4:mail}>
+    " License:	${4:This file is placed in the public domain.}
+
+snippet     plugin-template
+abbr        plugin's template.
+options     head
+    if exists("g:loaded_${1:plugin_name}")
+      finish
+    endif
+    let g:loaded_$1 = 1
+
+    let s:save_cpo = &cpo
+    set cpo&vim
+
+    ${0:edit here.}
+
+    let &cpo = s:save_cpo
+    unlet s:save_cpo
