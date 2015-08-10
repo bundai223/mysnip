@@ -1,17 +1,15 @@
-snippet     neobundle_load_on_source
-abbr        neobundle_load_on_source
+snippet     neobundle_hooks_on_source
+abbr        neobundle_hooks_on_source
 options     head
-    " ${1:plugin name} {{{
-    let s:bundle = neobundle#get('$1')
-    function! s:bundle.hooks.on_source(bundle)
+    function! neobundle#tapped.hooks.on_source(bundle)
       ${0}
     endfunction
-    " }}}
 
 snippet     neobundle_tap
 abbr        neobundle tap
 options     head
     if neobundle#tap('${1:plugin name}') "{{{
+      ${0}
       call neobundle#untap()
     endif
     "}}}
