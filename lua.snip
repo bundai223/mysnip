@@ -3,13 +3,14 @@ abbr        class template
     ${1:classname} = {}
     $1.new = function (${2})
         local this = {}
+        ${3:-- member initialize}
 
-        this.__construct = function(${3})
-        end
+        setmetatable(this, { __index = $1 })
 
-        ${0}
-        return this:__construct($2)
+        return this
     end
+
+    ${0:-- member functions}
 
 snippet     member_param
 alias       mparam
@@ -20,6 +21,6 @@ abbr        member parameter
 snippet     member_func
 alias       mfunc
 abbr        member function
-    this.${1:funcname} = function(${2})
+    ${1:classname}.${2:funcname} = function(self, ${3})
         ${0}
     end
