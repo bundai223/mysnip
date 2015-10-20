@@ -1,21 +1,29 @@
+snippet     trait
+abbr        trait
+options     head
+    trait ${1} {
+        ${0:TARGET}
+    }
+
+snippet     fntrait
+abbr        fn for trait
+options     head
+    fn ${1:#:func_name}(${2:#:args});
+
+snippet     fn-trait
+abbr        fn- for trait
+options     head
+    fn ${1:#:func_name}(${2:#:args}) -> ${3:#:ret};
+
 snippet     impl
 options     head
     impl ${1} {
         ${0:TARGET}
     }
 
-snippet     fn
-abbr        fn () {}
+snippet     implfor
+abbr        impl for traits
 options     head
-    fn ${1:#:func_name}(${2:#:args}) {
+    impl ${1} for ${2} {
         ${0:TARGET}
     }
-
-snippet     fn
-abbr        fn () -> {}
-options     head
-    fn ${1:#:func_name}(${2:#:args}) -> ${3:#:()} {
-        ${0:TARGET}
-    }
-
-
