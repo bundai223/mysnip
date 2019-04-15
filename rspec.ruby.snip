@@ -1,0 +1,39 @@
+snippet     spec
+abbr        rspec's spec
+options     head
+  require 'rails_helper'
+  
+  RSpec.describe "${1:name}", type: :${2:type} do
+    ${0}
+  end
+
+snippet     describe
+abbr        rspec's describe
+options     head
+  describe '${1}' do
+    ${0}
+  end
+
+snippet     context
+abbr        rspec's context
+options     head
+  context '${1}' do
+    ${0}
+  end
+
+snippet     it
+abbr        rspec's it
+options     head
+  it '${1}' do
+    ${0}
+  end
+
+snippet     let
+abbr        rspec's let
+options     head
+  let(:${1}) { ${0} }
+
+snippet     subject
+abbr        rspec's subject
+options     head
+  subject { ${0} }
